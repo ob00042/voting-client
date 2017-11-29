@@ -1,6 +1,8 @@
 import jsdom from 'jsdom';
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
+import {configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 const { JSDOM } = jsdom;
 
@@ -15,5 +17,7 @@ Object.keys(window).forEach((key) => {
 		global[key] = window[key];
 	}
 });
+
+configure({adapter: new Adapter()});
 
 chai.use(chaiImmutable);
