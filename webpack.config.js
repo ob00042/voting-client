@@ -5,17 +5,20 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     'react-hot-loader/patch',
-    './src/index.js'
+    './src/index.jsx'
   ],
   module: {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loaders: ['babel-loader']
+      loaders: 'babel-loader',
+      query: {
+        presets: ['react', 'es2015']
+      }
     }]
   },
   resolve: {
-    extensions: ['*', '.jsx', '.js']
+    extensions: ['.jsx', '.js']
   },
   output: {
     path: __dirname + '/dist',
