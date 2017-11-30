@@ -5,10 +5,10 @@ import {
 	scryRenderedDOMComponentsWithTag,
 	Simulate
 } from 'react-dom/test-utils';
-import {shallow} from 'enzyme';
-import {List} from 'immutable';
-import Voting from '../../src/components/Voting';
-import {expect} from 'chai';
+import { shallow } from 'enzyme';
+import { List } from 'immutable';
+import { Voting } from '../../src/components/Voting';
+import { expect } from 'chai';
 
 describe('Voting', () => {
 
