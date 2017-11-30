@@ -6,10 +6,9 @@ import Adapter from 'enzyme-adapter-react-16';
 
 const { JSDOM } = jsdom;
 
-const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
 const win = dom.window;
 
-global.document = win.document;
 global.window = win;
 
 Object.keys(window).forEach((key) => {
@@ -17,6 +16,10 @@ Object.keys(window).forEach((key) => {
 		global[key] = window[key];
 	}
 });
+
+global.document = window.document;
+
+console.log(document.body);
 
 configure({adapter: new Adapter()});
 
